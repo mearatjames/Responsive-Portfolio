@@ -1,16 +1,18 @@
+html {
+    height: 100%;
+}
 body {
     background-color: white;
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
 }
 
 ul {
     list-style-type: none;
     overflow: hidden;
-    margin: 0;
+    margin: 0 10% 0 0;
     padding: 0;
-    grid-column: 4/6;
-    grid-row: 1/2;
     text-align: center;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -32,57 +34,76 @@ li a {
 
 .container {
     display: grid;
-    grid-template-columns: 1fr 120px 2fr 2fr 1fr;
+    grid-template-columns: auto;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+        'header'
+        'main'
+        'footer';
     grid-column-gap: 0;
     grid-row-gap: 15px;
     margin: 0;
+    height: 100%;
+}
+
+.main {
+    grid-area: main;
+    width: 85%;
+    margin: auto;
+}
+
+.header {
+    grid-area: header;
+    background-color: rgb(26, 25, 25);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: 
+        'mearat navbar';
+    justify-items: end;
 }
 
 .container2 {
-    grid-column: 2/5;
-    grid-row: 3/4;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 15px;
 }
 
 #mearat {
-    grid-column: 2/3;
-    grid-row: 1/2;
-    background-color: rgb(63, 62, 62);
+    grid-area: mearat;
+    background-color: rgb(26, 25, 25);
     color: whitesmoke;
     padding-top: 15px;
-    margin-bottom: 2px solid rgb(36, 92, 156);
     text-decoration: none;
     text-align: center;
     font-weight: bold;
     border-bottom: 4px solid grey;
+    margin: 0 20% 0 0;
+}
+
+.navbar {
+    grid-area: navbar;
 }
 
 #home {
     text-decoration: none;
-    background-color: rgb(63, 62, 62);
+    background-color: rgb(26, 25, 25);
     color: whitesmoke;
     padding-top: 20px;
 }
 
 .aboutme {
-    grid-column: 2/5;
-    grid-row: 2/3;
     text-align: left;
     font-size: 20px;
 }
 
 .content {
-    grid-column: 2/5;
-    grid-row: 4/5;
     text-align: left;
     background-color: rgb(238, 238, 238);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 15px 0 15px 0;
 }
 
 .hangman {
-    text-align: left;
     background-color: rgb(238, 238, 238);
     font-size: 60px;
     align-content: center;
@@ -92,7 +113,6 @@ li a {
 }
 
 .rpggame {
-    text-align: left;
     background-color: rgb(238, 238, 238);
     font-size: 60px;
     align-content: center;
@@ -102,7 +122,6 @@ li a {
 }
 
 .triviagame {
-    text-align: left;
     background-color: rgb(238, 238, 238);
     font-size: 60px;
     align-content: center;
@@ -112,7 +131,6 @@ li a {
 }
 
 .rutgersinfowidget {
-    text-align: left;
     background-color: rgb(238, 238, 238);
     font-size: 60px;
     align-content: center;
@@ -122,7 +140,6 @@ li a {
 }
 
 .rockpaperscissors {
-    text-align: left;
     background-color: rgb(238, 238, 238);
     font-size: 60px;
     align-content: center;
@@ -139,29 +156,21 @@ li a {
 }
 
 .portfolio {
-    grid-column: 2/5;
-    grid-row: 2/3;
     text-align: left;
     font-size: 20px;
 }
 
 form {
-    grid-column: 2/5;
-    grid-row: 4/5;
     background-color: rgb(238, 238, 238);
     padding: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .frontnav {
-    grid-column: 1/2;
-    grid-row: 1/2;
     background-color: rgb(26, 25, 25);
 }
 
 .middlenav {
-    grid-column: 3/4;
-    grid-row: 1/2;
     background-color: rgb(26, 25, 25);
 }
 
@@ -184,11 +193,9 @@ p {
 }
 
 .socialmedia {
-    grid-column: 2/5;
-    grid-row: 5/6;
     display: flex;
     align-items: flex-end;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 .findme {
@@ -197,14 +204,15 @@ p {
 }
 
 #footer {
-    grid-column: 1/6;
-    grid-row: 6/7;
+    grid-area: footer;
     margin-top: 50px;
-    padding: 30px;
+    padding: 15px;
     background-color: rgb(238, 238, 238);
     text-align: center;
     border-top: 1px solid rgb(168, 165, 165);
-    font-size: 12px;
+    font-size: 10px;
+    align-items: center;
+    justify-items: center;
 }
 
 #aboutmephoto {
@@ -216,8 +224,40 @@ p {
     height: 120px;
 }
 
-@media(max-width: 1000px) {
+@media(max-width:640px) {
     .container2 {
         grid-template-columns: 1fr;
+    }
+    .header {
+        grid-area: header;
+        background-color: rgb(26, 25, 25);
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+            'mearat'
+            'navbar';
+        justify-items: center;
+    }
+    #mearat {
+        grid-area: mearat;
+        color: whitesmoke;
+        padding-top: 10px;
+        text-decoration: none;
+        text-align: center;
+        font-weight: bold;
+        border-bottom: 4px solid grey;
+        margin: auto;
+    }
+    ul {
+        list-style-type: none;
+        overflow: hidden;
+        margin: auto;
+        padding: 0;
+        text-align: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: 1px;
+        background-color: rgb(26, 25, 25)
     }
 }
