@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,21 +7,20 @@
     <title>Mearat Portfolio</title>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
-
 <body>
     <div class="container">
             <div class="header">
-                    <div id="mearat">
-                        <a id="home" href="index.html">Mearat Hou</a>
+                    <div class="mearat">
+                        <a class="home" href="index.html">Mearat Hou</a>
                     </div>
                     <ul class="navbar">
-                        <li>
+                        <li class="navitems">
                             <a href="index.html">About</a>
                         </li>
-                        <li>
+                        <li class="navitems">
                             <a href="portfolio.html">Portfolio</a>
                         </li>
-                        <li>
+                        <li class="navitems">
                             <a href="contact.html">Contact</a>
                         </li>
                     </ul>
@@ -34,32 +32,23 @@
             </h1>
             <hr>
         </div>
-        <form>
-            Name:
-            <br>
+        <form class="form">
+           <div class="contactform">Name:</div> 
             <input type="text" name="Name" placeholder="John Smith">
-            <br>
-            <br> Email:
-            <br>
+            <div class="contactform">Email:</div>
             <input type="email" name="email" placeholder="email@example.com">
-            <br>
-            <br> Subject:
-            <br>
+            <div class="contactform">Subject:</div>
             <select name="subject">
                 <option value="blank"></option>
                 <option value="generalinquiry">General Inquiry</option>
                 <option value="projectrequest">Project Request</option>
             </select>
-            <br>
-            <br> Message:
-            <br>
+            <div class="contactform">Message:</div>
             <textarea class="messagearea" placeholder="Enter Your Message Here"></textarea>
-            <br>
-            <br>
             <input type="submit" value="Submit">
         </form>
     </div>
-    <div id="footer">
+    <div class="footer">
             <div class="socialmedia">
                 <div class="github">
                     <a href="https://github.com/mearatjames">
@@ -80,5 +69,4 @@
             <p>Copyright &#169;</p>
         </div>    </div>
 </body>
-
 </html>
