@@ -1,0 +1,268 @@
+:root {
+    --dark: rgb(26, 25, 25);
+    --light:  rgb(238, 238, 238);
+    --shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 8px 0 rgba(0, 0, 0, 0.19);
+}
+
+html {
+    height: 100%;
+}
+body {
+    background-color: white;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+}
+
+.navbar {
+    list-style-type: none;
+    overflow: hidden;
+    margin: 0 10% 0 0;
+    padding: 0;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 1px;
+    background-color: var(--primary);
+}
+
+.navitems {
+    text-align: center;
+}
+
+.navitems a {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    padding: 14px 16px;
+    color: whitesmoke;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+        'header'
+        'main'
+        'footer';
+    grid-column-gap: 0;
+    grid-row-gap: 15px;
+    margin: 0;
+    height: 100%;
+}
+
+.main {
+    grid-area: main;
+    width: 85%;
+    margin: 20px auto;
+}
+
+.header {
+    grid-area: header;
+    background-color: var(--dark);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: 
+        'mearat navbar';
+    justify-items: end;
+}
+
+.container2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 15px;
+    margin-top: 15px;
+}
+
+.mearat {
+    grid-area: mearat;
+    background-color: var(--dark);
+    color: whitesmoke;
+    padding-top: 15px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 4px solid grey;
+    margin: 0 20% 0 0;
+}
+
+.navbar {
+    grid-area: navbar;
+}
+
+.home {
+    text-decoration: none;
+    background-color: var(--dark);
+    color: whitesmoke;
+    padding-top: 20px;
+}
+
+.aboutme {
+    text-align: left;
+    font-size: 20px;
+}
+
+.content {
+    text-align: left;
+    background-color: var(--light);
+    padding: 15px 0 15px 0;
+    margin-top: 15px;
+    box-shadow: var(--shadow);
+}
+
+.hangman {
+    background-color: var(--light);
+    font-size: 60px;
+    align-content: center;
+    text-align: center;
+    padding: 15px;
+    box-shadow: var(--shadow);
+}
+
+.rpggame {
+    background-color: var(--light);
+    font-size: 60px;
+    align-content: center;
+    text-align: center;
+    padding: 15px;
+    box-shadow: var(--shadow);
+}
+
+.triviagame {
+    background-color: var(--light);
+    font-size: 60px;
+    align-content: center;
+    text-align: center;
+    padding: 15px;
+    box-shadow: var(--shadow);
+}
+
+.rutgersinfowidget {
+    background-color: var(--light);
+    font-size: 60px;
+    align-content: center;
+    text-align: center;
+    padding: 15px;
+    box-shadow: var(--shadow);
+}
+
+.rockpaperscissors {
+    background-color: var(--light);
+    font-size: 60px;
+    align-content: center;
+    text-align: center;
+    padding: 15px;
+    box-shadow: var(--shadow);
+}
+
+.contact {
+    grid-column: 2/5;
+    grid-row: 2/3;
+    text-align: left;
+    font-size: 20px;
+}
+
+.portfolio {
+    text-align: left;
+    font-size: 20px;
+}
+
+.form {
+    background-color: var(--light);
+    padding: 20px;
+    margin-top: 15px;
+    box-shadow: var(--shadow);
+}
+
+a:hover { 
+    color:grey;
+}
+
+h1 {
+    margin: 0;
+    padding: 5px;
+}
+
+img {
+    margin-right: 5px;
+}
+
+p {
+    font-size: 22px;
+    margin: 20px;
+}
+
+.contactform {
+    margin-top: 10px;
+}
+
+.socialmedia {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.findme {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.footer {
+    grid-area: footer;
+    margin-top: 50px;
+    padding: 15px;
+    background-color: rgb(238, 238, 238);
+    text-align: center;
+    border-top: 1px solid rgb(168, 165, 165);
+    font-size: 10px;
+    align-items: center;
+    justify-items: center;
+}
+
+.aboutmephoto {
+    margin: 20px;
+}
+
+.messagearea {
+    width: 100%;
+    height: 120px;
+    resize: none;
+}
+
+@media(max-width:640px) {
+    .container2 {
+        grid-template-columns: 1fr;
+    }
+    .header {
+        grid-area: header;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+            'mearat'
+            'navbar';
+        justify-items: center;
+    }
+    .mearat {
+        grid-area: mearat;
+        color: whitesmoke;
+        padding-top: 10px;
+        text-decoration: none;
+        text-align: center;
+        font-weight: bold;
+        border-bottom: 4px solid grey;
+        margin: auto;
+    }
+    .navbar {
+        list-style-type: none;
+        overflow: hidden;
+        margin: auto;
+        padding: 0;
+        text-align: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: 1px;
+        background-color: rgb(26, 25, 25)
+    }
+}
